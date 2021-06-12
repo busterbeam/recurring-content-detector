@@ -12,20 +12,9 @@ from . import featurevectors
 from . import video_functions
 from . import evaluation
 
-def max_two_values(d):
-    """ 
-    a) create a list of the dict's keys and values; 
-    b) return the two keys with the max values
-    """  
-    v=list(d.values())
-    k=list(d.keys())
-    result1 = k[v.index(max(v))]
-    del d[result1]
-
-    v=list(d.values())
-    k=list(d.keys())
-    result2 = k[v.index(max(v))]
-    return [result1, result2]
+def max_two_values(dct):
+    """ Return two keys with the highest value """
+    return list(sorted(dct, lambda x: d[x]))[-2:]
 
 
 def fill_gaps(sequence, lookahead):
